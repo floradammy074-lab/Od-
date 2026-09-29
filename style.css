@@ -1,0 +1,81 @@
+:root{--ink:#111;--muted:#8a8a8f;--card:#f2f2f5;--green:#1fb54a;--red:#e5262b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--page:#dfe1ea;--sheet:#fff;--nav:#fff;--txt:#111;--blue-1:#061a4a;--blue-2:#0a2668;--blue-3:#0d3184;--blue-4:#1546a8;--blue-5:#1a52bf;--blue-grad:linear-gradient(180deg,var(--blue-1) 0%,var(--blue-2) 28%,var(--blue-3) 58%,var(--blue-4) 88%,var(--blue-5) 100%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#0b0b12;--sheet:#fff;--nav:#fff}}
+:root[data-theme="dark"]{--page:#0b0b12}
+*{box-sizing:border-box;margin:0;font-family:"Poppins","Inter",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+html,body{height:100%;background:var(--page)}
+.app{position:relative;max-width:420px;height:100%;margin:0 auto;overflow:hidden;background:var(--blue-grad);display:flex;flex-direction:column}
+.top{padding:14px 18px 0;color:#fff}
+.row{display:flex;align-items:center;justify-content:space-between}
+.user{display:flex;align-items:center;gap:10px}
+.av-lg{width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid #fff;overflow:hidden}
+.hi small{display:block;font-size:11px;opacity:.85}
+.hi b{font-size:16px;font-weight:600}
+.circ{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;margin-left:10px}
+.circ svg{width:18px;height:18px}
+.bal-l{font-size:12px;margin-top:22px;opacity:.95}
+.bal{font-size:36px;font-weight:700;letter-spacing:.2px;margin-top:2px}
+.acct{font-size:11px;letter-spacing:1px;margin-top:4px;display:flex;gap:8px;align-items:center}
+.btns{display:flex;gap:10px;margin-top:18px}
+.pill{flex:1;height:42px;border-radius:22px;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff}
+.pill.w{--g1:rgba(255,255,255,.5);--g2:rgba(255,255,255,.2)}
+.grid{width:42px;height:42px;flex:none;border-radius:50%;display:grid;place-items:center}
+
+/* Liquid glass buttons */
+.circ,.pill,.grid,.sv .h a.pill-btn{position:relative;overflow:hidden;isolation:isolate;cursor:pointer;color:#fff;
+ background:linear-gradient(160deg,var(--g1,rgba(255,255,255,.28)) 0%,var(--g2,rgba(255,255,255,.07)) 100%);
+ -webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);
+ border:1px solid rgba(255,255,255,.38);
+ box-shadow:inset 0 1.5px 1px rgba(255,255,255,.65),inset 0 -2px 4px rgba(255,255,255,.12),inset 0 0 12px rgba(255,255,255,.1),0 8px 18px rgba(2,10,50,.35);
+ transition:transform .15s ease,box-shadow .15s ease}
+.circ::before,.pill::before,.grid::before,.sv .h a.pill-btn::before{content:"";position:absolute;left:8%;right:8%;top:2px;height:46%;border-radius:999px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0))}
+.circ:active,.pill:active,.grid:active,.sv .h a.pill-btn:active{transform:scale(.95)}
+
+.handle{width:64px;height:4px;border-radius:2px;background:#fff;margin:14px auto 14px}
+.sheet{flex:1;box-shadow:0 -10px 30px rgba(6,26,74,.28);background:var(--sheet);border-radius:26px 26px 0 0;padding:14px 12px 110px;overflow-y:auto;color:var(--txt)}
+.contacts{background:var(--card);border-radius:16px;padding:12px 12px 10px}
+.h{display:flex;justify-content:space-between;align-items:center}
+.h b{font-size:16px;font-weight:600}
+.h a{font-size:12px;font-weight:500;color:#111;text-decoration:none}
+
+/* Savings card */
+.contacts.sv{background:var(--blue-grad);color:#fff;padding:16px;box-shadow:0 10px 24px rgba(6,26,74,.3)}
+.sv .h b{color:#fff}
+.sv .h a.pill-btn{font-size:12px;font-weight:600;text-decoration:none;padding:8px 16px;border-radius:999px;line-height:1;white-space:nowrap}
+.sv-lbl{font-size:12px;opacity:.8;margin-top:16px}
+.sv-amt{font-size:30px;font-weight:700;letter-spacing:.2px;margin-top:2px}
+.sv-bar{height:8px;border-radius:999px;background:rgba(255,255,255,.18);margin-top:14px;overflow:hidden;box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.sv-bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#7fb0ff,#fff)}
+.sv-meta{display:flex;justify-content:space-between;gap:8px;margin-top:8px;font-size:11px;opacity:.9}
+.sv-meta .up{color:#7ff0a3;font-weight:600}
+
+.tx-h{margin:18px 2px 0}
+.tx-h b{font-size:17px;font-weight:600}
+.day{font-size:11px;color:var(--muted);margin:8px 2px 12px}
+.tx{display:flex;align-items:center;gap:12px;margin:0 2px 16px}
+.logo{width:40px;height:40px;flex:none;border-radius:12px;display:grid;place-items:center;overflow:hidden}
+.tx .m{flex:1;min-width:0}
+.tx .m b{display:block;font-size:14px;font-weight:600}
+.tx .m span{font-size:11px;color:var(--muted)}
+.tx .r{text-align:right}
+.tx .r b{display:block;font-size:14px;font-weight:600}
+.tx .r span{font-size:10px;color:var(--muted)}
+.g{color:var(--green)}.rd{color:var(--red)}
+
+/* Floating pill navigation (Telegram style) */
+nav{position:absolute;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;pointer-events:none}
+nav .bar{pointer-events:auto;flex:1;height:64px;padding:5px;display:flex;justify-content:space-between;align-items:center;border-radius:999px;
+ background:linear-gradient(160deg,rgba(255,255,255,.75),rgba(235,238,250,.55));
+ -webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%);
+ border:1px solid rgba(255,255,255,.8);
+ box-shadow:inset 0 1px 1px #fff,0 10px 30px rgba(6,26,74,.22),0 2px 6px rgba(6,26,74,.12)}
+nav .bar div{flex:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:10px;font-weight:500;color:#3a3f52;border-radius:999px;cursor:pointer}
+nav .bar div.on{color:var(--blue-4);font-weight:600;background:rgba(21,70,168,.12);box-shadow:inset 0 0 0 1px rgba(21,70,168,.08)}
+nav .bar div.on svg{stroke:var(--blue-4)}
+nav svg{width:22px;height:22px}
+nav .bar svg{stroke:currentColor}
+.fab{pointer-events:auto;flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;
+ background:linear-gradient(160deg,rgba(21,70,168,.95),rgba(6,26,74,.95));
+ border:1px solid rgba(255,255,255,.45);
+ box-shadow:inset 0 1.5px 1px rgba(255,255,255,.6),inset 0 -2px 4px rgba(255,255,255,.1),0 10px 24px rgba(6,26,74,.4)}
+.fab::before{content:"";position:absolute;left:12%;right:12%;top:3px;height:45%;border-radius:999px;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0))}
+.fab:active{transform:scale(.95)}
